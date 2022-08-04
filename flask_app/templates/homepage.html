@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tv Shows</title>
+</head>
+<body>
+    <h1>Hey {{session['first_name']}}</h1>
+    <h1>All your Cocktails</h1>
+    <a href="/logout">Logout</a>
+    
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Network</th>
+            <th>Realease Date</th>
+            <th>Actions</th>
+        </tr>
+        {% for tv_show in tv_shows %}
+        <tr>
+            <td>{{tv_show.title}}</td>
+            <td>{{tv_show.network}}</td>
+            <td>{{tv_show.release_date}}</td>
+            <td><a href="/viewshow/{{tv_show.id}}">show</a>
+                {% if session['user_id'] == tv_show.user_id %}
+                <a href="/edit/{{tv_show.id}}">edit</a>
+                <a href="/delete/{{tv_show.id}}">delete</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/addtvshow">Add a New Show</a>
+</body>
+</html>

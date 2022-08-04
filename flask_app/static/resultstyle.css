@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+} 
+.master{
+    display: flex;
+    gap: 20px;
+    height: 75%;
+    flex-wrap: wrap;
+    padding: 25px
+}
+.textnnav{
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.card{
+    margin: 0 auto;
+    box-shadow: 5px 10px 15px 5px grey;
+}
+.master_description{
+    display: flex;
+    padding: 20px;
+}
+#or{
+    margin: 15px;
+}
+.home{
+    display: flex;
+    justify-content: end;
+    margin: 20px;
+}
